@@ -1,26 +1,24 @@
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-Consar Webclient
+Nova Calculator
 ===============
 
 ## Installation
 
 ### Clone
 ```bash
-git clone git@bitbucket.org:angel_calderaro/consar_webclient.git
+git git@github.com:calderaro/nova-calculator.git
 ```
 ### Install dependencies
 ```bash
 npm install
 ```
-### Run production server
+### Start server
 ```bash
- npm run production
+node index
 ```
-### Run development server
-```bash
- npm run start-dev  
-```
-### Node Version
 
-> Node v8.1.2
+### Enter
+```bash
+http://localhost:3006/
+```
