@@ -14,7 +14,6 @@ angular.module('App', [])
     template: `
       <div class='${style.container}'>
         <div class='${style.calculator}'>
-          {{$ctrl.mem}}
           <div class='${style.result}'>
             {{$ctrl.result}}
           </div>

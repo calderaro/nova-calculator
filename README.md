@@ -7,7 +7,7 @@ Nova Calculator
 
 ### Clone
 ```bash
-git git@github.com:calderaro/nova-calculator.git
+git clone git@github.com:calderaro/nova-calculator.git
 ```
 ### Install dependencies
 ```bash

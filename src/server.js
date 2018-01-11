@@ -7,9 +7,6 @@ import chalk from 'chalk'
 
 const PORT = process.env.port || 3006
 const log = console.log
-const title = 'NOVA'
-const NODE_ENV = process.env.NODE_ENV || 'development'
-
 const app = express()
 const server = http.createServer(app)
 
@@ -19,16 +16,16 @@ app
   .use(compress())
   .use('/static', express.static(path.join(__dirname, '../static')))
 
-  const webpack = require('webpack')
-  const webpackDevMiddleware = require('webpack-dev-middleware')
-  const webpackHotMiddleware = require('webpack-hot-middleware')
-  const webpackConfig = require('../webpack.config.dev')
-  const compiler = webpack(webpackConfig)
+const webpack = require('webpack')
+const webpackDevMiddleware = require('webpack-dev-middleware')
+const webpackHotMiddleware = require('webpack-hot-middleware')
+const webpackConfig = require('../webpack.config.dev')
+const compiler = webpack(webpackConfig)
 
-  app
-    .use(webpackDevMiddleware(compiler, {publicPath: webpackConfig.output.publicPath}))
-    .use(webpackHotMiddleware(compiler))
-    .get('*', (req, res) => res.sendFile(path.join(__dirname, '/index.html')))
+app
+  .use(webpackDevMiddleware(compiler, {publicPath: webpackConfig.output.publicPath}))
+  .use(webpackHotMiddleware(compiler))
+  .get('*', (req, res) => res.sendFile(path.join(__dirname, '/index.html')))
 
 server.listen(PORT, () =>
     log(chalk.green(`Listening at port ${PORT}`)))
